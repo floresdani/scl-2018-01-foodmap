@@ -1,21 +1,7 @@
+// Definiendo variables
+let map;
+let infowindow;
 var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-  let latitud = position.coords.latitude;
-  let longitud = position.coords.longitude;
-  const widget = document.getElementById('zomatoWidget');
-  widget.src=`https://www.zomato.com/widgets/res_search_widget.php?lat=${latitud}lon=${longitud}&theme=red&sort=distance`;
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-}
 
 function initMap() {
     // Creamos un mapa con las coordenadas actuales
@@ -28,7 +14,7 @@ function initMap() {
       let mapOptions = {
         center: myLatlng,
         zoom: 14,
-        mapTypeId: google.maps.MapTypeId.SATELLITE,
+        mapTypeId: google.maps.MapTypeId.MAP
       };
    
       map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
@@ -69,3 +55,21 @@ function initMap() {
         infowindow.open(map, this);
       });
       }
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+  let latitud = position.coords.latitude;
+  let longitud = position.coords.longitude;
+  const widget = document.getElementById('zomatoWidget');
+  widget.src=`https://www.zomato.com/widgets/res_search_widget.php?lat=${latitud}lon=${longitud}&theme=red&sort=distance`;
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+

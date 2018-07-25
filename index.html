@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
-<body>
+<body onload="initMap()">
   <!-- Preload Screen -->
   <section>
     <div class="preload">
@@ -28,6 +28,11 @@
   <!-- Logo -->
   <h1>Foodmap</h1>
   <!-- mapa -->
+  <section>
+    <div class="row">
+      <div id="mapa" style="width: 250px; height: 150px;"> </div>
+    </div>
+  </section>
   <!-- Botón de obtener localización -->
   <button onclick="getLocation()">Filtrar restaurantes</button>
   <!-- Título -->
@@ -63,9 +68,12 @@
     </div>
     <!-- Fin de row -->
   </div>
+  <!-- Javascript -->
   <script src="assets/main.js"></script>
   <script src="assets/data.js"></script>
-  
+  <!-- Google maps -->
+  <script type="text/javascript" src="https://maps.google.com/maps/api/js?libraries=places"></script>
+
 </body>
 
 </html>
