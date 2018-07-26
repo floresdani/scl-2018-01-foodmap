@@ -19,13 +19,21 @@
 <body onload="initMap()">
   <!-- Preload Screen -->
   <div id="splash">
-    <h1>Foodmap</h1>
-    <img id="mapLoading" src="img/loadingmap.gif" alt="loading-map">
+    <div class="row">
+      <div class="col-12">
+    <img class="logo" src="img/foodmaplogo.png" alt="Logo">
+  </div>
+  </div>
+
+     
+    <img class="logo" id="mapLoading" src="img/loadingmap.gif" alt="loading-map">
+ 
+ 
   </div>
 
   <section id="principalView" class="disappear">
     <!-- Logo -->
-    <h1>Foodmap</h1>
+    <img class="logo" src="img/foodmaplogo.png" alt="Logo">
     <!-- mapa -->
 
     <div class="row">
@@ -38,13 +46,16 @@
     <!-- Título -->
     <h3>Comida cerca de ti</h3>
     <!-- Botón de obtener localización -->
-    <button onclick="getLocation()">Filtrar restaurantes <i class="fas fa-search"></i></button>
+    <button id="filterbtn" onclick="getLocation()">Filtrar restaurantes
+      <i class="fas fa-search"></i>
+    </button>
     <!-- Widget Zomato de restaurantes cercanos -->
     <div class="row">
       <div class="col-12">
         <div class="widget_wrap" style="width:100%;height:504px;display:inline-block;">
           <iframe id="zomatoWidget" style="position:relative;width:100%;height:100%;" border="0" frameborder="0"></iframe>
         </div>
+
         <p id="demo"></p>
         <!-- Modal de selección -->
         <div class="modal" tabindex="-1" role="dialog">
