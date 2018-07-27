@@ -1,4 +1,4 @@
-// Definiendo variables globales
+// Definiendo variables
 let map;
 let infowindow;
 let x = document.getElementById("demo");
@@ -31,7 +31,7 @@ function initMap() {
 
     // Crear servicio "PlaceService" y enviar petición.
     let service = new google.maps.places.PlacesService(map);
-    // Buscar lugares cercanos a posición
+
     service.nearbySearch(request, function (results, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (let i = 0; i < results.length; i++) {
